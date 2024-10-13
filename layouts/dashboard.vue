@@ -270,17 +270,17 @@ const isOpen = ref(false)
 
 const mainSidebarItems = ref([
   {
-    name: "Home",
+    name: "Overview",
     icon: "home",
     url: "/dashboard",
   },
   {
-    name: "Invest",
+    name: "Accounts",
     icon: "invest",
-    url: "/dashboard/invest",
+    url: "/dashboard/accounts",
   },
   {
-    name: "Loans",
+    name: "Cards",
     icon: "loans",
     url: "/dashboard/loans",
   },
@@ -289,11 +289,11 @@ const mainSidebarItems = ref([
     icon: "payments",
     url: "/dashboard/payments",
   },
-  {
-    name: "Accounts",
-    icon: "accounts",
-    url: "/dashboard/accounts",
-  }
+  // {
+  //   name: "Accounts",
+  //   icon: "accounts",
+  //   url: "/dashboard/accounts",
+  // }
 ]);
 
 const configSidebarItems = ref([

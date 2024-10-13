@@ -5,79 +5,108 @@
         <!-- Left Column (Account Info) -->
         <div class="lg:w-2/3 w-full space-y-8 p-4 lg:p-8 h-screen overflow-y-auto custom-scrollbar no-scrollbar">
           <!-- Account Summary Card -->
-          <div class="bg-white p-4 lg:p-6 rounded-xl lg:w-8/12">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-              <div class="text-left w-full">
-               <div class="flex justify-between items-center w-full">
-                <div>
-                    <h2 class="text-[#2E3A59]">WALLET ACCOUNT</h2>
-                </div>
-                <div class="bg-[#020C24] flex items-center py-2 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
-                    <p class="font- text-sm text-white flex items-center gap-x-3">
-                        <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1_30850)">
-                            <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_1_30850">
-                            <rect width="12" height="12" fill="white"/>
-                            </clipPath>
-                            </defs>
-                            </svg>
-                            
-                        0125717275</p>
-                  </div>
-               </div>
-                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">₦34,950.00 <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.41667 0.625C3.5 0.625 1.00917 2.43917 0 5C1.00917 7.56083 3.5 9.375 6.41667 9.375C9.33333 9.375 11.8242 7.56083 12.8333 5C11.8242 2.43917 9.33333 0.625 6.41667 0.625ZM6.41667 7.91667C4.80667 7.91667 3.5 6.61 3.5 5C3.5 3.39 4.80667 2.08333 6.41667 2.08333C8.02667 2.08333 9.33333 3.39 9.33333 5C9.33333 6.61 8.02667 7.91667 6.41667 7.91667ZM6.41667 3.25C5.44833 3.25 4.66667 4.03167 4.66667 5C4.66667 5.96833 5.44833 6.75 6.41667 6.75C7.385 6.75 8.16667 5.96833 8.16667 5C8.16667 4.03167 7.385 3.25 6.41667 3.25Z" fill="#F2B12E"/>
-                    </svg>
-                    </span></h1>
-                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">₦250,890.00</span></p>
+       <section class="flex w-full gap-x-10 justify-between items-start">
+        <div class="bg-white p-4 lg:p-6 rounded-xl lg:w-8/12">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <div class="text-left w-full">
+             <div class="flex justify-between items-center w-full">
+              <div>
+                  <h2 class="text-[#2E3A59]">SAVINGS ACCOUNT</h2>
               </div>
-              <!-- <div class="bg-[#020C24] flex items-center py-3 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
-                <p class="font-medium text- text-white flex items-center gap-x-3">
-                    <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1_30850)">
-                        <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_1_30850">
-                        <rect width="12" height="12" fill="white"/>
-                        </clipPath>
-                        </defs>
-                        </svg>
-                        
-                    0125717275</p>
-              </div> -->
+              <div class="bg-[#020C24] flex items-center py-2 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
+                  <p class="font- text-sm text-white flex items-center gap-x-3">
+                      <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_1_30850)">
+                          <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_1_30850">
+                          <rect width="12" height="12" fill="white"/>
+                          </clipPath>
+                          </defs>
+                          </svg>
+                          
+                      0125717275</p>
+                </div>
+             </div>
+              <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">₦34,950.00 <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.41667 0.625C3.5 0.625 1.00917 2.43917 0 5C1.00917 7.56083 3.5 9.375 6.41667 9.375C9.33333 9.375 11.8242 7.56083 12.8333 5C11.8242 2.43917 9.33333 0.625 6.41667 0.625ZM6.41667 7.91667C4.80667 7.91667 3.5 6.61 3.5 5C3.5 3.39 4.80667 2.08333 6.41667 2.08333C8.02667 2.08333 9.33333 3.39 9.33333 5C9.33333 6.61 8.02667 7.91667 6.41667 7.91667ZM6.41667 3.25C5.44833 3.25 4.66667 4.03167 4.66667 5C4.66667 5.96833 5.44833 6.75 6.41667 6.75C7.385 6.75 8.16667 5.96833 8.16667 5C8.16667 4.03167 7.385 3.25 6.41667 3.25Z" fill="#F2B12E"/>
+                  </svg>
+                  </span></h1>
+              <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">₦250,890.00</span></p>
             </div>
-            <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
-              <button class="w-full sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.3337 10.0002V14.1668C18.3337 16.6668 16.667 18.3335 14.167 18.3335H5.83366C3.33366 18.3335 1.66699 16.6668 1.66699 14.1668V10.0002C1.66699 7.7335 3.03366 6.15016 5.15866 5.88349C5.37533 5.85016 5.60033 5.8335 5.83366 5.8335H14.167C14.3837 5.8335 14.592 5.84182 14.792 5.87515C16.942 6.12515 18.3337 7.71683 18.3337 10.0002Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M14.7925 5.87484C14.5925 5.8415 14.3842 5.83318 14.1675 5.83318H5.83418C5.60085 5.83318 5.37585 5.84984 5.15918 5.88318C5.27585 5.64984 5.44251 5.43318 5.64251 5.23318L8.35085 2.5165C9.49251 1.38317 11.3425 1.38317 12.4842 2.5165L13.9425 3.99152C14.4758 4.51652 14.7592 5.18317 14.7925 5.87484Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.3337 10.4165H15.8337C14.917 10.4165 14.167 11.1665 14.167 12.0832C14.167 12.9998 14.917 13.7498 15.8337 13.7498H18.3337" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                Fund account</button>
-              <button class="w-full sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.0003 18.3332C14.6027 18.3332 18.3337 14.6022 18.3337 9.99984C18.3337 5.39746 14.6027 1.6665 10.0003 1.6665C5.39795 1.6665 1.66699 5.39746 1.66699 9.99984C1.66699 14.6022 5.39795 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M7.08301 10H12.083" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10.417 12.5L12.917 10L10.417 7.5" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                Transfer</button>
-              <button class="w-full sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.0003 18.3332C14.5837 18.3332 18.3337 14.5832 18.3337 9.99984C18.3337 5.4165 14.5837 1.6665 10.0003 1.6665C5.41699 1.6665 1.66699 5.4165 1.66699 9.99984C1.66699 14.5832 5.41699 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M13.3301 10.0002H13.3375" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.99607 10.0002H10.0036" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6.66209 10.0002H6.66957" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                Account details</button>
-            </div>
+            <!-- <div class="bg-[#020C24] flex items-center py-3 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
+              <p class="font-medium text- text-white flex items-center gap-x-3">
+                  <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_30850)">
+                      <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_1_30850">
+                      <rect width="12" height="12" fill="white"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                      
+                  0125717275</p>
+            </div> -->
           </div>
+          <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
+            <button class="w-full sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.3327 10.0002V14.1668C18.3327 16.6668 16.666 18.3335 14.166 18.3335H5.83268C3.33268 18.3335 1.66602 16.6668 1.66602 14.1668V10.0002C1.66602 7.7335 3.03268 6.15016 5.15768 5.88349C5.37435 5.85016 5.59935 5.8335 5.83268 5.8335H14.166C14.3827 5.8335 14.591 5.84182 14.791 5.87515C16.941 6.12515 18.3327 7.71683 18.3327 10.0002Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.7935 5.87484C14.5935 5.8415 14.3852 5.83318 14.1685 5.83318H5.83516C5.60182 5.83318 5.37682 5.84984 5.16016 5.88318C5.27682 5.64984 5.44349 5.43318 5.64349 5.23318L8.35182 2.5165C9.49349 1.38317 11.3435 1.38317 12.4852 2.5165L13.9435 3.99152C14.4768 4.51652 14.7602 5.18317 14.7935 5.87484Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.3327 10.4165H15.8327C14.916 10.4165 14.166 11.1665 14.166 12.0832C14.166 12.9998 14.916 13.7498 15.8327 13.7498H18.3327" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+                  
+              Transfer</button>
+            <button class="w-full sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.0003 18.3332C14.5837 18.3332 18.3337 14.5832 18.3337 9.99984C18.3337 5.4165 14.5837 1.6665 10.0003 1.6665C5.41699 1.6665 1.66699 5.4165 1.66699 9.99984C1.66699 14.5832 5.41699 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.3301 10.0002H13.3375" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.99607 10.0002H10.0036" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.66209 10.0002H6.66957" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+              Account details</button>
+          </div>
+        </div>
+
+        <div class="bg-[#D8FF6F] lg:w-96  border-white border-2 rounded-3xl p-6 relative flex flex-col justify-between">
+          <!-- Title -->
+          <h3 class="text-2xl font-medium text-[#2E3A59]  max-w-xs">
+              Set up Fixed  deposit account
+          </h3>
+      
+          <!-- Images Section -->
+          <div class="flex items-center justify-between ml-20">
+            <!-- Phone Image -->
+            <img src="@/assets/img/phone.png" alt="Phone" class="w-1/2 h-auto" />
+      
+            <!-- Monster Image -->
+            <img src="@/assets/img/monster.png" alt="Monster" class="w-1/4 h-auto" />
+          </div>
+      
+          <!-- Arrow Button -->
+          <button class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+       </section>
   
           <!-- Quick Access and Suggestions -->
           <div>
@@ -95,8 +124,8 @@
   
             <!-- Quick Access Section -->
             <h3 class="text- font-medium text-[#2E3A59] mb-4">Quick Access</h3>
-            <div class="bg-white/80 py-6 rounded-xl flex justify-between items-center gap-x-7 lg:w-1/2 px-5">
-              <button class="text-center flex justify-center items-center flex-col gap-y-3">
+            <div class="bg-white/80 py-6 rounded-xl flex justify-center items-center gap-x-10 lg:w-1/2 px-5">
+              <!-- <button class="text-center flex justify-center items-center flex-col gap-y-3">
               <div class="bg-[#D7FFDD] p-3 px-4 lg:p-4 lg:px-6 rounded-full">
                 <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.6958 7.43096L15.6626 3.66027C15.8224 3.03714 15.5624 2.37322 14.9835 2.09268C12.0485 0.670314 8.51385 0.593964 6.29425 2.11522C5.88573 2.39521 5.72984 2.90633 5.81732 3.3938L6.54183 7.43096M14.6958 7.43096C19.0751 10.5196 20.8047 20.6502 17.9632 21.8856C13.5504 23.8043 6.04774 23.6152 2.465 21.2679C0.1181 19.4147 2.27315 9.90184 6.54183 7.43096M14.6958 7.43096H6.54183" stroke="#2C7812" stroke-width="1.25"/>
@@ -106,7 +135,7 @@
                     
                     
                 <p class="font-medium text-[#020C24]">Loans</p>
-              </button>
+              </button> -->
               <button class="text-center flex justify-center items-center flex-col gap-y-3">
                 <div class="bg-[#F6D9EC] p-3 px-4 lg:p-4 lg:px-6 rounded-full">
                     <svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,74 +169,8 @@
           </div>
   
           <!-- Suggestions Section -->
-          <div class="lg:flex lg:space-x-3 space-y-6 lg:space-y-0 lg:gap-x-3">
-            <div class="bg-[#D8FF6F] lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
-                <!-- Title -->
-                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-xs">
-                    Set up an Investment Account
-                </h3>
-            
-                <!-- Images Section -->
-                <div class="flex items-center justify-between ml-20">
-                  <!-- Phone Image -->
-                  <img src="@/assets/img/phone.png" alt="Phone" class="w-1/2 h-auto" />
-            
-                  <!-- Monster Image -->
-                  <img src="@/assets/img/monster.png" alt="Monster" class="w-1/4 h-auto" />
-                </div>
-            
-                <!-- Arrow Button -->
-                <button class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-gray-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div class="bg-[#D7E5FF] lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
-                <!-- Title -->
-                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-xs">
-                    Don’t get stranded, access Loans
-                </h3>
-            
-                <!-- Images Section -->
-                <div class="flex items-center justify-between ml-20">
-                  <!-- Phone Image -->
-                  <img src="@/assets/img/phone.png" alt="Phone" class="w-1/2 h-auto" />
-            
-                  <!-- Monster Image -->
-                  <img src="@/assets/img/monster.png" alt="Monster" class="w-1/4 h-auto" />
-                </div>
-            
-                <!-- Arrow Button -->
-                <button class="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-gray-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
-          </div>
+
+          <TransactionChart />
         </div>
   
         <!-- Right Column (Sidebar) -->
