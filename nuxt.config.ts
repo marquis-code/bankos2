@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  ssr: false, // Disable server-side rendering for this page
   postcss: {
     plugins: {
       "postcss-import": {},
@@ -9,6 +10,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  css: [
+    '@/assets/css/main.css', // Tailwind CSS
+    '@/assets/css/custom.css',   // Your custom styles
+  ],
   plugins: ["~/plugins/aos.client.ts"],
   modules: ['@kevinmarrec/nuxt-pwa'],
   pwa: {
@@ -62,6 +67,14 @@ export default defineNuxtConfig({
         strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
       },
     ],
+  },
+  generate: {
+    exclude: [/^\/dashboard/],  // Exclude all dashboard routes
+  },
+  nitro: {
+    prerender: {
+      routes: ['/']  // Specify the routes you want to prerender
+    }
   }
   // modules: [
   //   '@nuxtjs/pwa'
