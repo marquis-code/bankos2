@@ -133,9 +133,6 @@
       alert('New passcode and repeated passcode do not match')
       return
     }
-    console.log('Current Passcode:', currentPasscode.value)
-    console.log('New Passcode:', newPasscode.value)
-    console.log('Repeat New Passcode:', repeatNewPasscode.value)
     // Add logic to save the new passcode
   }
   </script>

@@ -128,7 +128,6 @@ export const use_create_passcode = () => {
       toastType: "error",
       duration: 3000,
     });
-    console.error("API Error:", message);
   };
 
   return {
