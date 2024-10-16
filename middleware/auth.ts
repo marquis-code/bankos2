@@ -3,7 +3,6 @@ const { isLoggedIn } = useUser();
 const router = useRouter();
 
 export default defineNuxtRouteMiddleware((to, from) => {
-  console.log('i am called')
   // If the user is not logged in and trying to access any route other than "/login" or the root "/", redirect to "/login"
   if (!isLoggedIn.value && to.path !== "/login" && to.path !== "/") {
     return router.push("/login");

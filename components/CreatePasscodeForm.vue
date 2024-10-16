@@ -172,9 +172,6 @@ const showPassword2 = ref(false)
 const handleLogin = () => {
   console.log('Phone:', phone.value);
   console.log('BVN:', bvn.value);
-  console.log('Passcode:', passcode1.value);
-
-  console.log('Passcode:', passcode2.value);
 };
 
 
