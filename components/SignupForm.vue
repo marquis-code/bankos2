@@ -1,16 +1,16 @@
 <template>
   <main>
     <div class="flex flex-col items-center justify-center w-full h-screen">
-      <div class="w-[500px] flex flex-col justify-start items-start">
-        <div class="flex justify-start items-start">
+      <div class="lg:w-[500px] p-4 flex flex-col justify-start items-start">
+        <div class="flex justify-start items-start pt-10 lg:pt-0">
           <img
             src="@/assets/img/logo.png"
             alt="LoaniQ Logo"
-            class="mx-auto mb-4 w-44"
+            class="mx-auto mb-4 w-32 lg:w-44"
           />
         </div>
        <div v-if="activeStep === 'personal-info'">
-        <h2 class="text-3xl flex items-center gap-x-2 font-medium text-[#323740] text-center mb-2">
+        <h2 class="lg:text-3xl text-xl flex items-center gap-x-2 font-medium text-[#323740] text-center mb-2">
           <img src="@/assets/icons/auth-home.svg" />
              
            Let’s get started
@@ -73,7 +73,6 @@
           </div>
           <div class="pt-6">
             <button
-  :disabled="isFormDisabled"
   type="submit"
   class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition"
 >
