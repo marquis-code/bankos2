@@ -52,15 +52,14 @@
             </div> -->
           </div>
           <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
-            <button class="w-full sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
+            <NuxtLink to="/dashboard/transfer" class="w-full sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.3327 10.0002V14.1668C18.3327 16.6668 16.666 18.3335 14.166 18.3335H5.83268C3.33268 18.3335 1.66602 16.6668 1.66602 14.1668V10.0002C1.66602 7.7335 3.03268 6.15016 5.15768 5.88349C5.37435 5.85016 5.59935 5.8335 5.83268 5.8335H14.166C14.3827 5.8335 14.591 5.84182 14.791 5.87515C16.941 6.12515 18.3327 7.71683 18.3327 10.0002Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M14.7935 5.87484C14.5935 5.8415 14.3852 5.83318 14.1685 5.83318H5.83516C5.60182 5.83318 5.37682 5.84984 5.16016 5.88318C5.27682 5.64984 5.44349 5.43318 5.64349 5.23318L8.35182 2.5165C9.49349 1.38317 11.3435 1.38317 12.4852 2.5165L13.9435 3.99152C14.4768 4.51652 14.7602 5.18317 14.7935 5.87484Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M18.3327 10.4165H15.8327C14.916 10.4165 14.166 11.1665 14.166 12.0832C14.166 12.9998 14.916 13.7498 15.8327 13.7498H18.3327" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                
-                  
-              Transfer</button>
+              Transfer
+            </NuxtLink>
             <button class="w-full sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.0003 18.3332C14.5837 18.3332 18.3337 14.5832 18.3337 9.99984C18.3337 5.4165 14.5837 1.6665 10.0003 1.6665C5.41699 1.6665 1.66699 5.4165 1.66699 9.99984C1.66699 14.5832 5.41699 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
