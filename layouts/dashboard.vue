@@ -148,7 +148,7 @@
 
       <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
         <form class="relative flex flex-1" action="#" method="GET">
-          <p class="text-[#7D8799] font-medium text-2xl flex items-center gap-x-4">Overview 
+          <p class="text-[#7D8799] font-medium text-2xl flex items-center gap-x-4">{{route.name}} 
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="4" cy="4" r="4" fill="#687181"/>
               </svg>
@@ -197,6 +197,8 @@ import { dynamicIcons } from "@/utils/assets";
 import avatarImage from '~/assets/img/avatar.png';
 import { logOut } from '@/composables/core/useLogout'
 const isOpen = ref(false)
+const route = useRoute()
+const router = useRouter()
 
 const mainSidebarItems = ref([
   {
@@ -207,18 +209,18 @@ const mainSidebarItems = ref([
   {
     name: "Accounts",
     icon: "invest",
-    url: "/dashboard/accounts",
+    url: "/dashboard/account-list",
   },
-  {
-    name: "Cards",
-    icon: "loans",
-    url: "/dashboard/loans",
-  },
-  {
-    name: "Payments",
-    icon: "payments",
-    url: "/dashboard/payments",
-  },
+  // {
+  //   name: "Cards",
+  //   icon: "loans",
+  //   url: "/dashboard/loans",
+  // },
+  // {
+  //   name: "Payments",
+  //   icon: "payments",
+  //   url: "/dashboard/payments",
+  // },
   // {
   //   name: "Accounts",
   //   icon: "accounts",
@@ -228,7 +230,7 @@ const mainSidebarItems = ref([
 
 const configSidebarItems = ref([
   {
-    name: "Support",
+    name: "Settings",
     icon: "support",
     url: "/dashboard/support",
   },
