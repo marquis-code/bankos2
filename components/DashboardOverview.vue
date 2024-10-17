@@ -97,7 +97,7 @@
 
             <h3 class="text- font-medium text-[#2E3A59] mb-4">Quick Access</h3>
             <div class="bg-white/80 py-6 rounded-xl flex justify-center items-center gap-x-10 lg:w-1/2 px-5">
-              <button class="text-center flex justify-center items-center flex-col gap-y-3">
+              <button @click="router.push('/dashboard/transaction')" class="text-center flex justify-center items-center flex-col gap-y-3">
                 <div class="bg-[#F6D9EC] p-3 px-4 lg:p-4 lg:px-6 rounded-full">
                     <svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.3069 25.6138H4.30745C2.18739 25.6138 0.5 23.8831 0.5 21.8063V3.80745C0.5 1.68739 2.23066 0 4.30745 0H13.3069C15.4269 0 17.1143 1.73066 17.1143 3.80745V21.8063C17.1143 23.8831 15.4269 25.6138 13.3069 25.6138ZM4.30745 1.81719C3.22579 1.81719 2.31719 2.72579 2.31719 3.80745V21.8063C2.31719 22.888 3.22579 23.7966 4.30745 23.7966H13.3069C14.3885 23.7966 15.2971 22.888 15.2971 21.8063V3.80745C15.2971 2.72579 14.3885 1.81719 13.3069 1.81719H4.30745Z" fill="#E53CAB"/>
@@ -107,7 +107,7 @@
                 </div>           
                 <p class="font-medium text-[#020C24]">Airtime</p>
               </button>
-              <button class="text-center flex justify-center items-center flex-col gap-y-3">
+              <button  @click="router.push('/dashboard/transaction/bills')" class="text-center flex justify-center items-center flex-col gap-y-3">
                 <div class="bg-[#F6EACA] p-3 px-4 lg:p-4 lg:px-6 rounded-full">
                     <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.5848 2.62657L9.46703 0.572996L3.11142 12.2802L5.76349 13.3444C5.81573 13.3686 5.86092 13.4075 5.89621 13.4587C5.93149 13.5098 5.95612 13.5722 5.96855 13.6418C5.98098 13.7113 5.98093 13.7867 5.96841 13.863C5.9559 13.9393 5.93118 14.015 5.89582 14.0854L0.549013 24.5934L11.5599 14.1522L8.97549 13.1151C8.92046 13.0913 8.87306 13.0512 8.83665 12.9975C8.80024 12.9437 8.77571 12.8778 8.76479 12.8043C8.75387 12.7308 8.75682 12.6515 8.77344 12.572C8.79007 12.4926 8.81995 12.4149 8.86099 12.3445L14.5848 2.62657Z" fill="#F57921"/>
@@ -312,6 +312,7 @@
   </template>
   
   <script setup lang="ts">
+  const router = useRouter()
 </script>
   
 <style scoped>

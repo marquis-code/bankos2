@@ -9,13 +9,13 @@
         </div>
         <h2 class="text-2xl font-bold text-gray-800">Successful</h2>
         <p class="text-gray-600 mt-2">
-          Your business account has been created successful. Kindly click the button below to proceed 
+            Your business account information has been submitted successful. Your information will be verified accordingly and a response will be sent to your email shortly
         </p>
      <div class="w-full pt-4">
-        <button @click="router.push('/business-docs')"
+        <button @click="router.push('/dashboard')"
         class="mt-6 bg-[#2F6D67] hover:bg-[#2F6D67] w-full text-white font-semibold py-4 text-sm px-4 rounded-lg"
       >
-      Continue to business verification
+      Continue to dashboard
       </button>
      </div>
       </div>

@@ -72,13 +72,14 @@
         <button
           type="button"
           @click="addDirector"
-          class="w-full border border-[#2F6D67] text-[#2F6D67] py-2 px-4 rounded-lg hover:bg-green-50 transition duration-300 mb-4"
+          class="w-full border-2 border-[#2F6D67] text-[#2F6D67] py-3 font-medium px-4 rounded-lg transition duration-300 mb-4"
         >
           + Add another Director
         </button>
   
         <!-- Submit Button -->
         <button
+         @click="handleAccount"
           type="submit"
           class="w-full bg-[#2F6D67] text-white py-3.5 disabled:cursor-not-allowed disabled:opacity-25 rounded-md bg-[#2F6D67] transition"
         >
@@ -100,6 +101,12 @@
     dob: string
     meansOfId: File | null
     utilityBill: File | null
+  }
+
+  const router = useRouter()
+  
+  const handleAccount = () => {
+    router.push('/business-creation-success')
   }
   
   // Reactive directors array to hold multiple director objects
@@ -128,6 +135,7 @@
   
   // Handle form submission by logging the directors array to the console
   const handleSubmit = () => {
+    const router = useRouter()
     console.log('Directors submitted:', directors)
     // Further form submission logic can be added here
   }

@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-2xl mx-auto my-8 p-6">
-      <h1 class="text-xl font-bold mb-4">Let’s Verify {{ companyName }}</h1>
+      <h1 class="text-3xl font-bold mb-4 max-w-xl">Let’s Verify <span class="text-[#323740] font-light">{{ companyName }}</span></h1>
       <p class="text-gray-600 mb-6">Business Documentation</p>
   
       <form @submit.prevent="handleSubmit" class="space-y-6  h-[800px] overflow-y-auto">
@@ -74,6 +74,7 @@
        </div>
 
         <button
+          @click="router.push('/director-docs')"
           type="submit"
           class="w-full bg-[#2F6D67] text-white py-3.5 disabled:cursor-not-allowed disabled:opacity-25 rounded-md  bg-[#2F6D67] transition"
         >
@@ -88,6 +89,8 @@
   import FileUpload from '~/components/FileUpload.vue'
   
   const companyName = 'Tabb Technologies Ltd'
+
+  const router = useRouter()
   
   const form = reactive({
     businessAddress: '',

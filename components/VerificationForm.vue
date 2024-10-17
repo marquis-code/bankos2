@@ -10,9 +10,9 @@
           class="w-20 h-20"
         />
       </div>
-      <h2 class="text-2xl font-bold mb-2 text-[#333333]">Verify account</h2>
+      <h2 class="text-2xl font-bold mb-2 text-[#333333]">{{title}}</h2>
       <p class="text-[#687181] mb-4">
-        Please enter the verification sent to your email ******dife@mail.com
+       {{desc}}
       </p>
 
       <!-- OTP Input Fields -->
@@ -81,6 +81,20 @@ const {
   loading: loadingVerify,
 } = use_auth_verify_otp();
 
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Verify account'
+  },
+  desc: {
+    type: String,
+    default: 'Please enter the verification sent to your email ******dife@mail.com'
+  },
+  verificationType :  {
+    type: String
+  },
+})
+
 const otpResendTimer = ref(96); // 01:36 (96 seconds)
 const otp = ref(Array(4).fill(""));
 const moveToNext = (index: number) => {
@@ -100,7 +114,7 @@ const verifyOtp = async () => {
   if (isOtpIncomplete.value) return;
   console.log(otp.value.join(""), 'otp here')
   credential.code.value = otp.value.join("");
-  await verify_OTP();
+  await verify_OTP(props.verificationType);
 };
 
 const handleResendOtp = async () => {

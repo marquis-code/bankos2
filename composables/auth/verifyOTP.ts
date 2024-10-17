@@ -4,6 +4,7 @@ import { useCustomToast } from "@/composables/core/useCustomToast";
 
 // Encryption key - Store this securely
 const secretKey = "LoanIQEncryption";
+const router = useRouter()
 
 const credential = {
   userId: ref(""),
@@ -15,11 +16,27 @@ export const use_auth_verify_otp = () => {
   const Router = useRouter();
   const { showToast } = useCustomToast();
   const route = useRoute()
+  const router = useRouter()
 
   const loading = ref(false);
 
-  const verify_OTP = async () => {
+  const verify_OTP = async (verificationType: string) => {
     loading.value = true;
+    if(verificationType === 'email'){
+      router.push('/verify-phone');
+    }
+
+    if(verificationType === 'phone'){
+      router.push('/create-password');
+    }
+    router.push('/dashboard');
+    showToast({
+      title: "Success",
+      message: "Login was successful!",
+      toastType: "success",
+      duration: 3000,
+    });
+
 
     try {
       const res = (await auth_api.$_verify_otp({

@@ -168,10 +168,12 @@ const passcode1 = ref('');
 const passcode2 = ref('');
 const showPassword1 = ref(false)
 const showPassword2 = ref(false)
+const router = useRouter()
 
 const handleLogin = () => {
   console.log('Phone:', phone.value);
   console.log('BVN:', bvn.value);
+  router.push('/account-creation-success')
 };
 
 

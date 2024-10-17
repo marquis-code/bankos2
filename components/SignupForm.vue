@@ -2,6 +2,11 @@
   <main>
     <div class="flex flex-col items-center justify-center w-full h-screen">
       <div class="lg:w-[500px] p-4 flex flex-col justify-start items-start">
+        <svg @click="router.back()" class="mb-4 cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20.4999 12H3.66992" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          
         <div class="flex justify-start items-start pt-10 lg:pt-0">
           <img
             src="@/assets/img/logo.png"
@@ -9,7 +14,7 @@
             class="mx-auto mb-4 w-32 lg:w-44"
           />
         </div>
-       <div v-if="activeStep === 'personal-info'">
+       <div v-if="route.query.step === 'personal-info'">
         <h2 class="lg:text-3xl text-xl flex items-center gap-x-2 font-medium text-[#323740] text-center mb-2">
           <img src="@/assets/icons/auth-home.svg" />
              
@@ -17,33 +22,33 @@
          </h2>
          <p class="text-[#687181] text-sm">To create your business account, kindly fill in the following information </p>
        </div>
-       <div v-if="activeStep === 'business-info'">
-        <h2 class="text-3xl flex items-center gap-x-2 font-medium text-[#323740] text-center mb-2">
+       <div v-if="route.query.step === 'business-info'">
+        <h2 class="text-3xl flex items-center gap-x-2 font-medium text-[#323740] text-start mb-2">
           Enter Your Business Email Address and Phone Number
          </h2>
        </div>
-        <form v-if="activeStep === 'personal-info'" class="w-full space-y-6" @submit.prevent="register">
+        <form v-if="route.query.step === 'personal-info'" class="w-full space-y-6" @submit.prevent="goToBusinessInfo">
           <div class="mb-4">
             <label
               class="block text-[#7D8799] font-medium mb-1 text-sm"
-              for="email"
+              for="businessName"
               >Your Business Name</label
             >
             <input
-              type="email"
-              id="email"
-              v-model="credential.email.value"
+              type="text"
+              id="businessName"
+              v-model="credential.businessName.value"
               class="w-full px-4 py-4 bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500"
             />
           </div>
           <div class="mb-4">
             <label
               class="block text-[#7D8799] font-medium mb-1 text-sm"
-              for="email"
+              for="businessSector"
               >What industry do you work in?</label
             >
-            <select id="email"
-            v-model="credential.email.value"
+            <select id="businessSector"
+            v-model="credential.businessSector.value"
             class="w-full px-4 py-4 bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500"
           >
           <option>Oil and Gas</option>
@@ -61,10 +66,17 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div v-for="(item, idx) in ['Limited Liability Company', 'Sole Proprietorship', 'Partnership', 'Religious Organization', 'Clubs/Societies/Associations']" :key="idx" class="relative flex items-start">
       <div class="flex h-6 items-center">
-        <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+        <input 
+          v-model="credential.businessType" 
+          :value="item" 
+          id="businessType" 
+          aria-describedby="comments-description" 
+          name="businessType" 
+          type="checkbox" 
+          class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
       </div>
       <div class="ml-3 text-sm leading-6">
-        <label for="comments" class="font-medium text-gray-900">{{item}}</label>
+        <label for="comments" class="font-medium text-gray-900">{{ item }}</label>
       </div>
     </div>
   </div>
@@ -81,16 +93,7 @@
 
           </div>
         </form>
-        <form v-if="activeStep === 'business-info'" class="w-full space-y-6" @submit.prevent="register">
-          <div class="pt-4">
-            <button
-              type="button"
-              class="w-full bg-gray-500 text-white py-3.5 rounded-md"
-              @click="goBackToPersonalInfo"
-            >
-              Go Back to Personal Info
-            </button>
-          </div>
+        <form v-if="route.query.step === 'business-info'" class="w-full space-y-6" @submit.prevent="register">
           <div class="mb-4">
             <label
               class="block text-[#7D8799] font-medium mb-1 text-sm"
@@ -100,7 +103,6 @@
             <input
               type="email"
               id="email"
-              v-model="credential.email.value"
               class="w-full px-4 py-4 bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500"
             />
           </div>
@@ -110,24 +112,30 @@
           </div>
           <div class="pt-6">
             <button
+            type="submit"
+            class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition"
+          >
+            {{ loading ? "Processing..." : "Create New Account" }}
+          </button>
+            <!-- <button
   :disabled="isFormDisabled"
   type="submit"
   class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition"
 >
   {{ loading ? "Processing..." : "Create New Account" }}
-</button>
+</button> -->
 
           </div>
         </form>
-        <div class="text-center mt-4 flex items-center gap-y-4 flex-col w-full">
+        <div class="text-center mt-4 flex items-start gap-y-4 flex-col w-full">
           <p
             @click="openModal"
-            class="text-[#2E3A59] cursor-pointer text-center"
+            class="text-[#2E3A59] cursor-pointer text-sm text-start"
           >
             By signing up, you accept our
             <span class="text-[#2C64E3]">Terms & Conditions</span>
           </p>
-          <p class="text-[#687181] flex items-center gap-x-3">
+          <p class="text-[#687181] flex items-start gap-x-3">
             Already have an account?
             <NuxtLink to="/login" class="text-[#2F6D67] hover:underline"
               >Log in</NuxtLink
@@ -176,11 +184,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { use_auth_register } from "@/composables/auth/register";
 
-const { credential, register, loading, isFormDisabled } = use_auth_register();
+const { credential, register, loading } = use_auth_register();
 
 // Modal open/close state
 const isModalOpen = ref(false);

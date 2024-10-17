@@ -20,6 +20,7 @@ export const use_auth_login = () => {
 
   const login = async () => {
     loading.value = true;
+    router.push('/email-sent-success')
     const res = (await auth_api.$_login({
       passcode: credential.passcode.value,
       phoneNumber: credential.phoneNumber.value,

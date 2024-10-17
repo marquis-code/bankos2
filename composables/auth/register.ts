@@ -1,10 +1,8 @@
 import { auth_api } from "@/apiFactory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const credential = {
-  bvn: ref(""),
-  email: ref(""),
-  phoneNumber: ref(""),
   businessName: ref(""),
+  phoneNumber: ref(""),
   businessSector: ref(""),
   businessType: ref("")
 };
@@ -16,6 +14,7 @@ export const use_auth_register = () => {
 
   const register = async () => {
     loading.value = true;
+    router.push(`/verify-email`);
 
     const payload = {
       bvn: credential.bvn.value,
