@@ -7,7 +7,7 @@
         <div class="w-2/3 rounded-md border p-6 border-gray-100 bg-white">
           <h2 class="text-2xl font-bold text-[#016938] mb-4">CSV Bulk Transfer</h2>
           <p class="text-sm text-[#26352E]">You have uploaded 4,121 recipients, 1,487 of these are Wesleys.</p>
-          <div class="grid grid-cols-5 gap-5 mt-6">
+          <div class="flex flex-wrap gap-5 mt-6">
             <div class="p-6 bg-white border shadow-sm border-gray-100 rounded-b-xl text-center">
               <h3 class="text-lg font-bold text-[#016938]">₦1,200,000.00</h3>
               <p class="text-sm text-[#016938]">Total Amount</p>

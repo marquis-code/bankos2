@@ -133,12 +133,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-white rounded-lg p-6">
-    <section class="flex justify-between items-center">
+  <div class="bg-white rounded-lg p-3 lg:p-6 w-full">
+    <section class="lg:flex justify-between space-y-4 lg:space-y-0 items-center mb-5 lg:mb-0">
       <p class="font-medium pl-8">Cash Flow</p>
       
       <!-- Flow and date range filters -->
-      <div class="filters pl-8 mb-4 w-1/2 flex justify-end  outline-none items-end px-3 rounded-md">
+      <div class="filters lg:pl-8 mb-4 lg:w-1/2 flex justify-end  outline-none items-end px-3 rounded-md">
         <select class="rounded-lg outline-none border-[0.5px] py-2.5 text-sm border-gray-600 px-6" v-model="selectedFlow" @change="onFlowChange(selectedFlow)">
           <option value="both">Both flows</option>
           <option value="inflow">Inflow</option>
