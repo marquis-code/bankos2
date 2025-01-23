@@ -1,23 +1,19 @@
-<template>
+<!-- <template>
     <div>
-      <!-- Trigger the modal -->
       <button @click="showModal" class="bg-green-500 text-white py-2 px-4 rounded">
         Open Modal
       </button>
   
-      <!-- Combined Modal -->
       <Modal v-if="showingModal">
         <div>
           <button @click="backToPreviousStep" v-if="step === 2" class="text-green-600">Back</button>
           
-          <!-- Step 1: Confirm Bulk Transfer -->
           <div v-if="step === 1">
             <h2 class="text-center text-2xl font-bold">Confirm Bulk Transfer</h2>
             <p class="text-center mt-2">
               Enter your PIN to confirm transfer of <strong>₦500,000</strong> to Ifeoluwa Chimdi, GTBank 01225678
             </p>
             <div class="flex justify-center space-x-4 my-6">
-              <!-- PIN Input Fields -->
               <input
                 v-for="(digit, index) in 4"
                 :key="index"
@@ -35,14 +31,12 @@
             </button>
           </div>
   
-          <!-- Step 2: Input OTP -->
           <div v-if="step === 2">
             <h2 class="text-center text-2xl font-bold">Input OTP</h2>
             <p class="text-center mt-2">
               Kindly enter the OTP that has been sent to your email address and phone number
             </p>
             <div class="flex justify-center space-x-4 my-6">
-              <!-- OTP Input Fields -->
               <input
                 v-for="(digit, index) in 6"
                 :key="index"
@@ -109,4 +103,4 @@
     }
   }
   </style>
-  
+   -->

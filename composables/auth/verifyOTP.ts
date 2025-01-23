@@ -1,13 +1,8 @@
-import CryptoJS from "crypto-js"; // You can install this package for encryption
 import { auth_api } from "@/apiFactory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 
-// Encryption key - Store this securely
-const secretKey = "LoanIQEncryption";
-const router = useRouter()
-
 const credential = {
-  userId: ref(""),
+  email: ref(""),
   code: ref(""),
 } as any;
 
@@ -20,27 +15,11 @@ export const use_auth_verify_otp = () => {
 
   const loading = ref(false);
 
-  const verify_OTP = async (verificationType: string) => {
+  const verify_OTP = async () => {
     loading.value = true;
-    if(verificationType === 'email'){
-      router.push('/verify-phone');
-    }
-
-    if(verificationType === 'phone'){
-      router.push('/create-password');
-    }
-    router.push('/dashboard');
-    showToast({
-      title: "Success",
-      message: "Login was successful!",
-      toastType: "success",
-      duration: 3000,
-    });
-
-
     try {
-      const res = (await auth_api.$_verify_otp({
-        userId: route.query.userId,
+      const res = (await auth_api.$_email_activation({
+        email: route.query.userId,
         code: credential.code.value
       })) as any;
 
@@ -53,14 +32,10 @@ export const use_auth_verify_otp = () => {
           toastType: "success",
           duration: 3000,
         });
-
-        // Encrypt and store userId and otp in localStorage
-        const encryptedUserId = CryptoJS.AES.encrypt(res?.data?.data?.onboardingId, secretKey).toString();
-        const encryptedOtp = CryptoJS.AES.encrypt(credential?.code?.value, secretKey).toString();
-        localStorage.setItem("userId", encryptedUserId);
-        localStorage.setItem("otp", encryptedOtp);
-
-        Router.push(`/create-password?userId=${res?.data?.data.onboardingId}`);
+        if(res.data.next === 'BVN_Validation'){
+          router.push(`/profile-setup?userId=${res?.data?.userId}&email=${res?.data?.email}`)
+        }
+        router.push('/login')
       } else {
         console.log(res.data)
         showToast({

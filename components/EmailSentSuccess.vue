@@ -20,13 +20,30 @@
       </button>
      </div>
      <div class="text-center mt-4">
-        <p class="text-[#687181] flex gap-x-2 justify-center items-center"> 
+        <!-- <p class="text-[#687181] flex gap-x-2 justify-center items-center"> 
             <NuxtLink to="/verify-account" class="text-[#2F6D67] hover:underline">Enter the code manually</NuxtLink> 
             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 4.16683L13.8333 10.0002L8 15.8335" stroke="#2F6D67" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 
-          </p>
+          </p> -->
+          <p class="text-[#687181] flex gap-x-2 justify-center items-center">
+          <button
+            class="text-[#2F6D67] hover:underline"
+            @click="navigateToVerifyPage"
+          >
+            Enter the code manually
+          </button>
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8 4.16683L13.8333 10.0002L8 15.8335"
+              stroke="#2F6D67"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </p>
       </div>
       </div>
     </div>
@@ -34,11 +51,12 @@
   
   <script setup lang="ts">
   const route  = useRoute()
+const router = useRouter();
   import { useCustomToast } from '@/composables/core/useCustomToast'
    const { showToast } = useCustomToast();
 
   
-  const email = ref(route.query.email || 'obasam@gmail.com')
+  const email = ref(route?.query?.userId || 'obasam@gmail.com')
   
   const openMailApp = () => {
     if (email.value) {
@@ -52,5 +70,18 @@
         });
     }
   }
+
+  const navigateToVerifyPage = () => {
+  if (email.value) {
+    router.push(`/verify-account?userId=${encodeURIComponent(email.value)}`);
+  } else {
+    showToast({
+      title: 'Error',
+      message: 'User email not found.',
+      toastType: 'error',
+      duration: 3000,
+    });
+  }
+};
   </script>
   

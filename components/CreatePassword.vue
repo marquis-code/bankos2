@@ -198,7 +198,7 @@
         </p>
   
         <!-- Form Starts -->
-        <form class="w-full space-y-6" @submit.prevent="createPasscode">
+        <form class="w-full space-y-6" @submit.prevent="resetPassword">
           <!-- New Passcode Field -->
           <div class="mb-4 relative">
             <label class="block text-[#7D8799] font-medium mb-1 text-sm" for="passcode">Enter New Passcode</label>
@@ -391,10 +391,10 @@
   </template>
   
   <script setup lang="ts">
-  import { use_create_passcode } from '@/composables/auth/createPassCode';
+  import { useResetPassword } from '@/composables/auth/resetPassword';
   
   // Define state
-  const { createPasscode, loading, credential } = use_create_passcode();
+  const { resetPassword, loading, credential } = useResetPassword();
   const showPassword = ref(false);
   const showConfirmPassword = ref(false);
   const confirmPasscode = ref('');
@@ -411,12 +411,12 @@
   
   // Check if passcode and confirm passcode match
   const isPasscodeMatching = computed(() => {
-    return credential.passcode.value === confirmPasscode.value;
+    return credential.newPassword.value === confirmPasscode.value;
   });
   
   // Validate passcode length (exactly 4 characters)
   const isValidLength = computed(() => {
-    return credential.passcode.value.length === 4 && confirmPasscode.value.length === 4;
+    return credential.newPassword.value.length === 4 && confirmPasscode.value.length === 4;
   });
   </script>
   

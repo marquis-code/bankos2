@@ -1,10 +1,9 @@
 import { auth_api } from "@/apiFactory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const credential = {
-  businessName: ref(""),
-  phoneNumber: ref(""),
-  businessSector: ref(""),
-  businessType: ref("")
+  username: ref(""),
+  email: ref(""),
+  password: ref("")
 };
 
 export const use_auth_register = () => {
@@ -14,11 +13,11 @@ export const use_auth_register = () => {
 
   const register = async () => {
     loading.value = true;
-    router.push(`/verify-email`);
 
     const payload = {
-      bvn: credential.bvn.value,
+      username: credential.username.value,
       email: credential.email.value,
+      password: credential.password.value
     };
 
     try {
@@ -33,7 +32,8 @@ export const use_auth_register = () => {
           toastType: "success",
           duration: 3000,
         });
-        router.push(`/verify-account?userId=${res.data.data.userId}`);
+        // router.push(`/verify-account?userId=${credential.email.value}`);
+        router.push(`/email-sent-success?userId=${credential.email.value}`);
       } else {
         console.log(res.data, 'error here')
         showToast({
@@ -56,8 +56,9 @@ export const use_auth_register = () => {
 
   const isFormDisabled = computed(() => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(credential.email.value);
-    const bvnValid = /^\d{11}$/.test(credential.bvn.value); // Checks if it's a string of 11 digits
-    return loading.value || !emailValid || !bvnValid;
+    const usernameValid = credential?.username?.value?.length > 3 // Checks if it's a string of 11 digits
+    const passwordValid = credential?.password?.value?.length > 3 // Checks if it's a string of 11 digits
+    return loading.value || !emailValid || !usernameValid || !passwordValid;
   });
   
 

@@ -10,20 +10,54 @@ export const useResendOtp = () => {
   const resendOtp = async () => {
     loading.value = true;
 
-    const payload = {
-      userId: route.query.userId,
-    };
-    const res = (await auth_api.$_resend_otp(payload)) as any;
-    if (res.type !== "ERROR") {
+    // Safely get the email from localStorage
+    const userEmail = localStorage.getItem('userEmail');
+    if (!userEmail) {
       showToast({
-        title: "Success",
-        message: res.data.message,
-        toastType: "success",
+        title: "Error",
+        message: "User email is missing. Please try again.",
+        toastType: "error",
         duration: 3000,
       });
-      router.push(`/verify-account?userId=${res.data.data.userId}`);
+      loading.value = false;
+      return;
     }
-    loading.value = false;
+
+    const payload = {
+      userId: route.query.userId,
+      email: userEmail,
+    };
+
+    try {
+      const res = (await auth_api.$_resend_otp(payload)) as any;
+      console.log(res, 'here');
+      if (res.type !== "ERROR") {
+        showToast({
+          title: "Success",
+          message: res.data.message,
+          toastType: "success",
+          duration: 3000,
+        });
+        router.push(`/verify-account?userId=${res.data.data.userId}?userType=existing`);
+      } else {
+        showToast({
+          title: "Error",
+          message: res.data.errors[0]?.msg || "Something went wrong",
+          toastType: "error",
+          duration: 3000,
+        });
+      }
+    } catch (error) {
+      console.error("Error resending OTP:", error);
+      showToast({
+        title: "Error",
+        message: "An unexpected error occurred. Please try again later.",
+        toastType: "error",
+        duration: 3000,
+      });
+    } finally {
+      loading.value = false;
+    }
   };
 
   return {

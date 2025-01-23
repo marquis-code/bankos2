@@ -68,8 +68,8 @@
   </template>
   
   <script setup lang="ts">
-  import { useFetchAccountProfile } from '@/composables/modules/profile/getAccountProfile'
-  const { profileObj, loading } = useFetchAccountProfile()
+  // import { useFetchAccountProfile } from '@/composables/modules/profile/getAccountProfile'
+  // const { profileObj, loading } = useFetchAccountProfile()
   
   const personalInfo = ref({
     fullName: 'Chinedu Ndukief',

@@ -7,7 +7,7 @@ const credential = {
   password: ref(""),
 };
 
-export const use_auth_login = () => {
+export const useLogout = () => {
   const router = useRouter();
   const loading = ref(false);
   const { showToast } = useCustomToast();
@@ -18,9 +18,9 @@ export const use_auth_login = () => {
     );
   });
 
-  const login = async () => {
+  const logout = async () => {
     loading.value = true;
-    const res = (await auth_api.$_login({
+    const res = (await auth_api.$_logout({
       password: credential.password.value,
       usernameOrEmail: credential.usernameOrEmail.value,
     })) as any;
@@ -36,5 +36,5 @@ export const use_auth_login = () => {
       router.push("/dashboard");
     }
   };
-  return { credential, login, loading, isFormDisabled };
+  return { credential, logout, loading, isFormDisabled };
 };

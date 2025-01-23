@@ -1,5 +1,6 @@
 <template>
-    <div class="min-h-screen bg-white flex justify-center items-center">
+  <UserSignup' />
+    <!-- <div class="min-h-screen bg-white flex justify-center items-center">
         <div class="max-w-2xl w-7/12 text-center">
           <img src="@/assets/img/logo.png" alt="Wesley Logo" class="mb-8 w-32" />
           <h1 class="text-2xl max-w-xs font-semibold text-start text-[#323740] mb-4">Sign Up on Wesley Corporate Internet Banking</h1>
@@ -33,10 +34,11 @@
             <NuxtLink href="/login" class="text-[#2F6D67] font-semibold">Log in</NuxtLink>
           </p>
         </div>
-    </div>
+    </div> -->
    </template>
 
    <script setup lang="ts">
+import UserSignup from '~/components/UserSignup.vue';
    definePageMeta({
       layout: 'auth',
    })

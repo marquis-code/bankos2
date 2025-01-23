@@ -1,21 +1,20 @@
 import { auth_api } from "@/apiFactory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 
-export const use_set_transaction_pin = () => {
+const credential = {
+  email: ref(""),
+};
+
+
+export const useForgotPassword = () => {
   const Router = useRouter();
   const loading = ref(false);
-  const errorMessage = ref("");
   const { showToast } = useCustomToast();
-
-  const credential = {
-    pin: ref(""),
-  };
-
-  const setTransactionPin = async () => {
-    if (!credential.pin.value) {
+  const forgotPassword = async () => {
+    if (!credential.email.value) {
       showToast({
         title: "Error",
-        message: "Pin is required.",
+        message: "Email is required.",
         toastType: "error",
         duration: 3000,
       });
@@ -25,25 +24,25 @@ export const use_set_transaction_pin = () => {
     loading.value = true;
 
     try {
-      const res = (await auth_api.$_set_transaction_pin({
-        pin: credential.pin.value,
+      const res = (await auth_api.$_forgot_password({
+        email: credential.email.value,
       })) as any;
-
-      loading.value = false;
 
       if (res.type !== "ERROR") {
         showToast({
           title: "Success",
-          message: "Transaction pin set successfully.",
+          message: "Please enter your new password to continue.@",
           toastType: "success",
           duration: 3000,
         });
 
-        Router.push("/account-success");
+        // Redirect to the verify OTP page
+
+        Router.push(`/reset-password?token=${res.data.token}`);
       } else {
         showToast({
           title: "Error",
-          message: res.data.message || "Failed to set pin",
+          message: res.data.message || "Failed to send OTP",
           toastType: "error",
           duration: 3000,
         });
@@ -57,7 +56,8 @@ export const use_set_transaction_pin = () => {
         duration: 3000,
       });
     }
+    loading.value = false;
   };
 
-  return { credential, setTransactionPin, loading, errorMessage };
+  return { credential, forgotPassword, loading };
 };

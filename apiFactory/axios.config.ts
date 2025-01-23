@@ -7,8 +7,8 @@ const { showToast } = useCustomToast();
 
 const $GATEWAY_ENDPOINT_WITHOUT_VERSION = import.meta.env
   .VITE_BASE_URL as string;
-const $GATEWAY_ENDPOINT = import.meta.env.VITE_BASE_URL + "/api/v1";
-const $GATEWAY_ENDPOINT_V2 = import.meta.env.VITE_BASE_URL + "/api/v2";
+const $GATEWAY_ENDPOINT = import.meta.env.VITE_BASE_URL + "/api";
+const $GATEWAY_ENDPOINT_V1 = import.meta.env.VITE_BASE_URL + "/api/v1";
 const $IMAGE_UPLOAD_ENDPOINT = import.meta.env.VITE_IMAGE_UPLOAD_BASE_URL as string;
 const $TERMI_ENDPOINT =  import.meta.env.VITE_TERMI_URL
 
@@ -23,8 +23,8 @@ export const TERMI_GATEWAY_ENDPOINT = axios.create({
   baseURL: $TERMI_ENDPOINT
 });
 
-export const GATEWAY_ENDPOINT_V2 = axios.create({
-  baseURL: $GATEWAY_ENDPOINT_V2
+export const GATEWAY_ENDPOINT_V1 = axios.create({
+  baseURL: $GATEWAY_ENDPOINT_V1
 });
 
 export const GATEWAY_ENDPOINT_WITH_AUTH = axios.create({
@@ -64,7 +64,7 @@ export interface CustomAxiosResponse extends AxiosResponse {
 
 const instanceArray = [
   GATEWAY_ENDPOINT,
-  GATEWAY_ENDPOINT_V2,
+  GATEWAY_ENDPOINT_V1,
   GATEWAY_ENDPOINT_WITH_AUTH,
   GATEWAY_ENDPOINT_WITHOUT_VERSION,
   GATEWAY_ENDPOINT_WITHOUT_VERSION_WITH_AUTH,

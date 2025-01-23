@@ -19,9 +19,9 @@
   <script setup lang="ts">
   import Tabs from '@/components/Profile/Tabs.vue'
   import PersonalInfo from '@/components/Profile/PersonalInfo.vue'
-  import NextOfKin from '@/components/Profile/NextOfKin.vue'
+  // import NextOfKin from '@/components/Profile/NextOfKin.vue'
   import GovernmentId from '@/components/Profile/GovernmentId.vue'
-  import EmploymentDetails from '@/components/Profile/EmploymentDetails.vue'
+  // import EmploymentDetails from '@/components/Profile/EmploymentDetails.vue'
   import UpdateSecurity from '@/components/Profile/UpdateSecurity.vue'
   
   const user = ref({
@@ -44,12 +44,12 @@
     switch (activeTab.value) {
       case 'personal':
         return PersonalInfo
-      case 'next-of-kin':
-        return NextOfKin
+      // case 'next-of-kin':
+      //   return NextOfKin
       case 'government-id':
         return GovernmentId
-      case 'employment':
-        return EmploymentDetails
+      // case 'employment':
+      //   return EmploymentDetails
       case 'security':
         return UpdateSecurity
       default:
