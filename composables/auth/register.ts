@@ -35,6 +35,7 @@ export const use_auth_register = () => {
         // router.push(`/verify-account?userId=${credential.email.value}`);
         router.push(`/email-sent-success?userId=${credential.email.value}`);
       } else {
+        router.push(`/email-sent-success?userId=obasam@gmail.com`);
         console.log(res.data, 'error here')
         showToast({
           title: "Error",
