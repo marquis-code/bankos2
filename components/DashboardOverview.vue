@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7]">
-      <div class="flex flex-col md:flex-col lg:flex-col 2xl:flex-row justify-between space-y-8 lg:space-y-0 lg:space-x-8">
+      <div class="flex justify-between space-y-8 lg:space-y-0 lg:space-x-8">
         <div class="2xl:w-2/3 w-full space-y-8 p-4 lg:p-8 h-screen overflow-y-auto custom-scrollbar no-scrollbar">
        <section class="md:flex space-y-6 md:space-y-0  lg:space-y-0 w-full gap-x-10 justify-between items-start ">
         <div class="bg-white p-4 lg:p-6 rounded-xl  md:w-6/12 lg:w-8/12">

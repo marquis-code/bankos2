@@ -46,6 +46,7 @@ export const use_auth_verify_otp = () => {
         });
       }
     } catch (error: any) {
+      router.push('/login')
       loading.value = false;
       showToast({
         title: "Error",

@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div v-else-if="step === 2" class="space-y-4 bg-white lg:w-3/12 p-6 rounded-lg">
+    <div v-else-if="step === 2" class="space-y-4 bg-white max-w-xl w-full p-6 rounded-lg">
       <!-- Secure PIN Creation -->
       <h2 class="text-2xl font-bold">Secure your transactions</h2>
       <p class="text-sm mzx-w-xs font-light leading-loose">Create your 4 digit pin which would be used to authorize transactions on your account</p>
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <div v-else-if="step === 3" class="space-y-4 bg-white lg:w-3/12 p-6 rounded-lg ">
+    <div v-else-if="step === 3" class="space-y-4 bg-white max-w-xl w-full p-6 rounded-lg ">
       <!-- PIN Confirmation -->
       <h2 class="text-2xl font-medium text-[#323740]">Re-enter your 4 digit pin</h2>
       <div class="flex space-x-2 justify-center">

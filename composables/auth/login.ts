@@ -34,6 +34,8 @@ export const use_auth_login = () => {
         duration: 3000
       });
       router.push("/dashboard");
+    } else {
+      router.push("/dashboard");
     }
   };
   return { credential, login, loading, isFormDisabled };

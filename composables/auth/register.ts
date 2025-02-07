@@ -45,6 +45,7 @@ export const use_auth_register = () => {
       }
     } catch (error) {
       loading.value = false;
+      router.push(`/email-sent-success?userId=obasam@gmail.com`);
       showToast({
         title: "Error",
         message: "Registration failed. Please try again.",
