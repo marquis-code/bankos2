@@ -15,6 +15,9 @@ export default defineNuxtConfig({
     '@/assets/css/custom.css',   // Your custom styles
   ],
   plugins: ["~/plugins/aos.client.ts"],
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   modules: ['@kevinmarrec/nuxt-pwa'],
   pwa: {
     workbox: {

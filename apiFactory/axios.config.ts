@@ -85,12 +85,12 @@ instanceArray.forEach((instance) => {
     },
     (err: any) => {
       if (typeof err.response === "undefined") {
-        showToast({
-          title: "Error",
-          message: "kindly check your network connection",
-          toastType: "error",
-          duration: 3000
-        });
+        // showToast({
+        //   title: "Error",
+        //   message: "kindly check your network connection",
+        //   toastType: "error",
+        //   duration: 3000
+        // });
         return {
           type: "ERROR",
           ...err.response,
