@@ -20,7 +20,7 @@ export const useAdminLogin = () => {
 
   const login = async () => {
     loading.value = true;
-    const res = (await auth_api.$_login({
+    const res = (await auth_api.$_admin_login({
       password: credential.password.value,
       usernameOrEmail: credential.usernameOrEmail.value,
     })) as any;

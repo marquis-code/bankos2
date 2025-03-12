@@ -1,71 +1,6 @@
 <template>
     <div class="flex flex-col md:flex-row min-h-screen bg-white">
-      <!-- Sidebar Navigation -->
       <div class="w-full md:w-64 border-r border-gray-200 p-6 space-y-8 shrink-0">
-        <!-- General Section -->
-        <!-- <div>
-          <h3 class="text-sm font-medium text-gray-500 mb-4">General</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <FingerprintIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Authentication</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <MessageSquareIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>SMS template</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <MailIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Email templates</span>
-              </a>
-            </li>
-          </ul>
-        </div> -->
-  
-        <!-- Organization Section -->
-        <!-- <div>
-          <h3 class="text-sm font-medium text-gray-500 mb-4">Organization</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <SettingsIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Settings</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <UsersIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Roles and permissions</span>
-              </a>
-            </li>
-          </ul>
-        </div> -->
-  
-        <!-- Security Section -->
-        <!-- <div>
-          <h3 class="text-sm font-medium text-gray-500 mb-4">Security</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <LockIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Restrictions</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <ShieldAlertIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Fraud detection</span>
-              </a>
-            </li>
-          </ul>
-        </div> -->
-  
-        <!-- API Providers Section -->
         <div>
           <h3 class="text-sm font-medium text-gray-500 mb-4">API Providers</h3>
           <ul class="space-y-3">
@@ -93,61 +28,18 @@
             </li>
           </ul>
         </div>
-  
-        <!-- Developers Section -->
-        <!-- <div>
-          <h3 class="text-sm font-medium text-gray-500 mb-4">Developers</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <KeyIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Sessions</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <File class="w-5 h-5 mr-3 text-gray-500" />
-                <span>JWT templates</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <WebhookIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Webhooks</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <RouteIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Paths / Routing</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <GlobeIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Domains</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center text-gray-700 hover:text-gray-900">
-                <PuzzleIcon class="w-5 h-5 mr-3 text-gray-500" />
-                <span>Integrations</span>
-              </a>
-            </li>
-          </ul>
-        </div> -->
       </div>
   
-      <!-- Main Content -->
+
       <div class="flex-1 p-6 md:p-10 overflow-auto">
         <div class="max-w-4xl mx-auto">
-          <!-- Header -->
+
           <div class="mb-8">
             <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ activeProvider === 'nip' ? 'NIP' : 'Easy Pay' }} API Keys</h1>
             <p class="text-gray-600">Manage API keys for {{ activeProvider === 'nip' ? 'Nigerian Instant Payment' : 'Easy Pay Payment Gateway' }}</p>
           </div>
   
-          <!-- Environment Tabs -->
+
           <div class="mb-8 animate-fade-in">
             <div class="flex border-b border-gray-200">
               <button 
@@ -169,7 +61,7 @@
             </div>
           </div>
   
-          <!-- API Keys Documentation -->
+    
           <div class="space-y-8">
             <!-- Base URL -->
             <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-fade-in">
@@ -204,13 +96,13 @@
               </div>
             </div>
   
-            <!-- Client Credentials Section -->
+
             <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-fade-in">
               <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
                 <h3 class="text-lg font-medium text-gray-900">Client Credentials</h3>
               </div>
               <div class="p-6 space-y-6">
-                <!-- Client ID -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Client ID</h4>
@@ -241,7 +133,7 @@
                   </div>
                 </div>
   
-                <!-- Client Secret -->
+ 
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Client Secret</h4>
@@ -275,7 +167,7 @@
                   </div>
                 </div>
   
-                <!-- Client Code -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Client Code</h4>
@@ -308,13 +200,13 @@
               </div>
             </div>
   
-            <!-- Institution Details Section -->
+
             <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-fade-in">
               <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
                 <h3 class="text-lg font-medium text-gray-900">Institution Details</h3>
               </div>
               <div class="p-6 space-y-6">
-                <!-- Institution Code -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Institution Code</h4>
@@ -341,7 +233,7 @@
                   </div>
                 </div>
   
-                <!-- Biller ID -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Biller ID</h4>
@@ -368,7 +260,7 @@
                   </div>
                 </div>
   
-                <!-- Authorization Code -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">Authorization Code</h4>
@@ -404,13 +296,13 @@
               </div>
             </div>
   
-            <!-- GL Accounts Section -->
+
             <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-fade-in">
               <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
                 <h3 class="text-lg font-medium text-gray-900">GL Accounts</h3>
               </div>
               <div class="p-6 space-y-6">
-                <!-- GL Credit -->
+
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">GL Credit</h4>
@@ -437,7 +329,6 @@
                   </div>
                 </div>
   
-                <!-- GL Debit -->
                 <div>
                   <div class="flex items-center mb-2">
                     <h4 class="text-sm font-medium text-gray-700">GL Debit</h4>
@@ -466,7 +357,7 @@
               </div>
             </div>
   
-            <!-- Save Changes Button -->
+
             <div class="flex justify-end mb-8 animate-fade-in">
               <button 
                 @click="openSaveChangesModal" 
@@ -479,7 +370,7 @@
               </button>
             </div>
   
-            <!-- Warning Message -->
+
             <div class="flex items-start text-orange-600 mb-8 animate-fade-in p-4 bg-orange-50 border border-orange-200 rounded-md">
               <AlertTriangleIcon class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
               <span>Never share your secret keys with anyone. Our support team will never ask for your secret keys.</span>
@@ -488,7 +379,7 @@
         </div>
       </div>
   
-      <!-- Right Sidebar -->
+
       <div class="w-full md:w-64 p-6 border-t md:border-t-0 md:border-l border-gray-200 shrink-0">
         <div class="space-y-4">
           <button class="flex items-center text-gray-700 hover:text-gray-900 w-full">
@@ -509,7 +400,7 @@
             <div class="text-sm text-gray-600">Latest API version 2023-12-09</div>
           </div>
   
-          <!-- API Key Information -->
+
           <div class="pt-4 border-t border-gray-200">
             <h3 class="text-sm font-medium text-gray-700 mb-2">Current Selection</h3>
             <div class="text-sm text-gray-600 mb-1">
@@ -525,7 +416,7 @@
         </div>
       </div>
   
-      <!-- Password Confirmation Modal -->
+
       <Teleport to="body">
         <div v-if="showConfirmModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in">
           <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-xl animate-scale-in">
@@ -563,7 +454,7 @@
         </div>
       </Teleport>
   
-      <!-- Edit Key Modal -->
+
       <Teleport to="body">
         <div v-if="showEditKeyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in">
           <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-xl animate-scale-in">
@@ -604,7 +495,7 @@
         </div>
       </Teleport>
   
-      <!-- Regenerate Key Modal -->
+
       <Teleport to="body">
         <div v-if="showRegenerateKeyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in">
           <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-xl animate-scale-in">
@@ -632,7 +523,7 @@
         </div>
       </Teleport>
   
-      <!-- Save Changes Modal -->
+
       <Teleport to="body">
         <div v-if="showSaveChangesModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in">
           <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-xl animate-scale-in">
@@ -659,7 +550,7 @@
         </div>
       </Teleport>
   
-      <!-- Success Toast -->
+
       <Teleport to="body">
         <div 
           v-if="showToast" 

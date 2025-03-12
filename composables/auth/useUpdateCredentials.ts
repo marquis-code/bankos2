@@ -10,7 +10,10 @@ export const useUpdateCredentials = () => {
 
   const updateCredentials = async (payload: any) => {
     loading.value = true;
-    const res = await $_update_credentials(payload) as any
+    const updatedPayload = {
+      body: payload
+    }
+    const res = await $_update_credentials(updatedPayload) as any
     if(res.type !== 'ERROR'){
       showToast({
         title: "Success",

@@ -10,6 +10,7 @@ export const useGetCredentials = () => {
     const getCredentials = async () => {
       loading.value = true;
       const response = await $_get_credentials() as any
+      console.log(response.data, 'resheree')
       if (response.type !== "ERROR") {
         credentials.value = response.data;
         showToast({

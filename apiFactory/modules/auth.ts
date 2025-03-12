@@ -57,5 +57,9 @@ export const auth_api = {
       $_update_credentials: (payload: any) => {
         let url = `/auth/providers/credentials`;
         return GATEWAY_ENDPOINT.post(url, payload);
-      }
+      },
+	  $_admin_login: (credential: any) => {
+		const url = '/auth/signin'
+		return GATEWAY_ENDPOINT.post(url, credential)
+	},
 }
