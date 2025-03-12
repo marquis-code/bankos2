@@ -2,7 +2,10 @@ import axios, { AxiosResponse } from "axios";
 import { useUser } from "@/composables/auth/user";
 import { useCustomToast } from '@/composables/core/useCustomToast'
 
-const { token, logOut } = useUser();
+const { 
+  token, 
+  logOut } = useUser();
+// const token = ref(`eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNzM4NTAxNzYwLCJleHAiOjE3MzkxMDY1NjB9.KPC7QUR4kGCUcVvNdGj58MwadOQYLC04v1ObTZsAZEeTpILjyshUhj8MwUkdVhgCky8lG4o3p2WDrYkhKYUl8A`)
 const { showToast } = useCustomToast();
 
 const $GATEWAY_ENDPOINT_WITHOUT_VERSION = import.meta.env

@@ -673,6 +673,8 @@
   </template>
   
   <script setup lang="ts">
+  import { useGetCredentials } from '@/composables/auth/useGetCredentials';
+  const { credentials, loading } = useGetCredentials()
   import { ref, computed, watch } from 'vue';
   import { 
     FingerprintIcon, 

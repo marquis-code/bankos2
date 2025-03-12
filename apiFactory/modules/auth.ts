@@ -49,5 +49,13 @@ export const auth_api = {
 	$_get_idp_verification: () => {
 		const url = `/igree/get-link`
 		return GATEWAY_ENDPOINT.get(url)
-	}
+	},
+	$_get_credentials: () => {
+        let url = `/auth/providers/credentials`;
+        return GATEWAY_ENDPOINT.get(url);
+      },
+      $_update_credentials: (payload: any) => {
+        let url = `/auth/providers/credentials`;
+        return GATEWAY_ENDPOINT.post(url, payload);
+      }
 }
