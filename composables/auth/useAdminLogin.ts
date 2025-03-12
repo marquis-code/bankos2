@@ -33,7 +33,8 @@ export const useAdminLogin = () => {
         toastType: "success",
         duration: 3000
       });
-      router.push("/admin/api-keys");
+      router.push("/admin/settings");
+      window.location.href = "/admin/settings"
     }
   };
   return { credential, login, loading, isFormDisabled };
