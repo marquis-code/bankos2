@@ -223,7 +223,7 @@
         <div v-if="activeTab === 'account'" class="space-y-6">
           <div class="p-8 text-center bg-white rounded-lg shadow-sm">
             <div class="flex justify-center mb-4">
-              <img src="/placeholder.svg?height=120&width=120" alt="Account illustration" class="h-30 w-30" />
+              <!-- <img src="/placeholder.svg?height=120&width=120" alt="Account illustration" class="h-30 w-30" /> -->
             </div>
             <h3 class="text-xl font-medium text-gray-800 mb-2">Account Settings</h3>
             <p class="text-gray-600">Account settings content would appear here.</p>
@@ -246,7 +246,7 @@
               
               <div class="mb-6">
                 <div class="flex justify-center mb-4">
-                  <img src="/placeholder.svg?height=100&width=100" alt="Security illustration" class="h-24 w-24" />
+                  <!-- <img src="/placeholder.svg?height=100&width=100" alt="Security illustration" class="h-24 w-24" /> -->
                 </div>
                 <p class="text-gray-600 mb-4">
                   Regenerating your API key will invalidate your current key. All applications using this key will need to be updated.
