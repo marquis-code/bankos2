@@ -211,21 +211,6 @@ const mainSidebarItems = ref([
     icon: "invest",
     url: "/dashboard/account-list",
   },
-  // {
-  //   name: "Cards",
-  //   icon: "loans",
-  //   url: "/dashboard/loans",
-  // },
-  // {
-  //   name: "Payments",
-  //   icon: "payments",
-  //   url: "/dashboard/payments",
-  // },
-  // {
-  //   name: "Accounts",
-  //   icon: "accounts",
-  //   url: "/dashboard/accounts",
-  // }
 ]);
 
 const configSidebarItems = ref([
