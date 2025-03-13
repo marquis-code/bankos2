@@ -10,9 +10,9 @@ export const useGetCredentials = () => {
     const getCredentials = async () => {
       loading.value = true;
       const response = await $_get_credentials() as any
-      console.log(response.data, 'resheree')
+      console.log(response?.data, 'resheree')
       if (response.type !== "ERROR") {
-        credentials.value = response.data;
+        credentials.value = response?.data;
         showToast({
           title: "Success",
           message: "Credentials retrieved successfully.",
@@ -22,7 +22,7 @@ export const useGetCredentials = () => {
       } else {
         showToast({
           title: "Error",
-          message: `${response.data.message || 'Error retrieving Credentials'}`,
+          message: `${response?.data?.message || 'Error retrieving Credentials'}`,
           toastType: "error",
           duration: 3000,
         });

@@ -62,4 +62,8 @@ export const auth_api = {
 		const url = '/auth/signin'
 		return GATEWAY_ENDPOINT.post(url, credential)
 	},
+	$_update_password: (payload: any) => {
+        let url = `/auth/providers/update-password`;
+        return GATEWAY_ENDPOINT.post(url, payload);
+      },
 }

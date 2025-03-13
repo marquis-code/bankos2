@@ -4,7 +4,9 @@
           <!-- {{ credentials }} -->
         <ApiKeysManagement :apiKeys="credentials" />
      </div>
-     <div v-else>Processing...</div>
+     <div v-else class="animate-pulse flex space-x-4">
+           <div class="rounded-md bg-slate-100 h-96 w-full"></div>
+       </div>
   </section>
 </template>
 
