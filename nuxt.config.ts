@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     '@/assets/css/main.css', // Tailwind CSS
     '@/assets/css/custom.css',   // Your custom styles
   ],
+  build: {
+    transpile: ['xlsx']
+  },
   plugins: ["~/plugins/aos.client.ts"],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }

@@ -66,4 +66,8 @@ export const auth_api = {
         let url = `/auth/providers/update-password`;
         return GATEWAY_ENDPOINT.post(url, payload);
       },
+	$_upload_file: (payload: any) => {
+        let url = `/auth/providers/upload-file`;
+        return GATEWAY_ENDPOINT.post(url, payload);
+      },
 }
